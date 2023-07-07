@@ -9,10 +9,6 @@ const GlobalStyles = createGlobalStyle`
     --light--yellow:#FFF4D2;
   } 
 
-  * {
-    font-family: 'Kakao', AppleSDGothicNeo, sans-serif;
-  }
-
   html {
     font-size: 62.5%;
     letter-spacing: -0.05px;
