@@ -6,6 +6,7 @@ declare module '*.png';
 declare module '*.jpeg';
 declare module '*.gif';
 declare module '*.woff';
+declare module '*.svg';
 
 declare module 'styled-components' {
   export interface DefaultTheme {

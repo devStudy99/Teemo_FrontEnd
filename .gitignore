@@ -8,5 +8,5 @@
 
 # misc
 .DS_Store
-.env.development.local
-.env.production.local
+.env.development
+.env.production
