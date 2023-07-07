@@ -6,7 +6,7 @@ import { Route, Routes } from 'react-router-dom';
 import Write from '@components/Write';
 import Detail from '@components/Detail';
 import BoardList from '@components/BoardList';
-import MyPage from '@components/MyPage';
+// import MyPage from '@components/MyPage';
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
         <Route path="/write" element={<Write />} />
         <Route path="/detail" element={<Detail />} />
         <Route path="/boardList" element={<BoardList />} />
-        <Route path="/mypage" element={<MyPage />} />
+        {/* <Route path="/mypage" element={<MyPage />} /> */}
       </Routes>
       <Footer />
     </>
