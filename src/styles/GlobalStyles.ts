@@ -25,6 +25,20 @@ const GlobalStyles = createGlobalStyle`
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
       monospace;
   }
+
+  input{
+    outline: none;
+  }
+
+  ol, ul{
+    list-style: none;
+    }
+
+  button {
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+  }
 `;
 
 export default GlobalStyles;
