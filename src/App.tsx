@@ -6,6 +6,8 @@ import { Route, Routes } from 'react-router-dom';
 import Write from '@components/Write';
 import Detail from '@components/Detail';
 import BoardList from '@components/BoardList';
+import SignUp from '@pages/SignUp';
+import Login from '@pages/Login';
 // import MyPage from '@components/MyPage';
 
 function App() {
@@ -17,6 +19,8 @@ function App() {
         <Route path="/write" element={<Write />} />
         <Route path="/detail" element={<Detail />} />
         <Route path="/boardList" element={<BoardList />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/login" element={<Login />} />
         {/* <Route path="/mypage" element={<MyPage />} /> */}
       </Routes>
       <Footer />
