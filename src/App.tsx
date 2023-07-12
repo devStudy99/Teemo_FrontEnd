@@ -10,6 +10,7 @@ import SignUp from '@pages/SignUp';
 import Login from '@pages/Login';
 // import MyPage from '@components/MyPage';
 import Welcome from '@pages/Welcome';
+import Main from '@pages/cashBook/Main';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<Welcome />} />
+        <Route path="/main" element={<Main />} />
         {/* <Route path="/mypage" element={<MyPage />} /> */}
       </Routes>
       <Footer />
