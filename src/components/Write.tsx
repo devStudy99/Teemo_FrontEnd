@@ -30,7 +30,6 @@ const Write = () => {
                 padding: '20px',
                 paddingLeft: '0px',
                 fontSize: '24px',
-                outline: 'none',
               }}
               placeholder="제목을 입력하세요."
             />
@@ -42,7 +41,6 @@ const Write = () => {
                 padding: '20px',
                 paddingLeft: '0px',
                 paddingBottom: '250px',
-                outline: 'none',
               }}
               placeholder="상세한 내용을 입력해주세요"
             />
