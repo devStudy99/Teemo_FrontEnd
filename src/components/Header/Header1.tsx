@@ -52,7 +52,7 @@ const Header = () => {
               fontWeight: 'bold',
             }}
           >
-            서비스소개
+            서비스 소개
           </div>
           <div
             style={{
