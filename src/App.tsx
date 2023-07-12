@@ -10,6 +10,10 @@ import MyPage from '@components/MyPage';
 import MyWrite from '@components/MyWrite';
 import Analysis from '@components/Analysis';
 import Analysis2 from '@components/Analysis2';
+import SignUp from '@pages/SignUp';
+import Login from '@pages/Login';
+// import MyPage from '@components/MyPage';
+import Welcome from '@pages/Welcome';
 
 function App() {
   return (
@@ -24,6 +28,10 @@ function App() {
         <Route path="/mywrite" element={<MyWrite />} />
         <Route path="/analysis" element={<Analysis />} />
         <Route path="/analysis2" element={<Analysis2 />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<Welcome />} />
+        {/* <Route path="/mypage" element={<MyPage />} /> */}
       </Routes>
       <Footer />
     </>
