@@ -28,11 +28,11 @@ const GlobalStyles = createGlobalStyle`
       monospace;
   }
 
-  input{
+  input {
     outline: none;
   }
 
-  ol, ul{
+  ol, ul {
     list-style: none;
     }
 
@@ -40,6 +40,10 @@ const GlobalStyles = createGlobalStyle`
     border: 0;
     background: transparent;
     cursor: pointer;
+  }
+
+  a {
+    text-decoration: none;
   }
 `;
 

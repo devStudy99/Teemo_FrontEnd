@@ -1,7 +1,6 @@
-// import Header from '@components/Header/Header';
+import Header from '@components/Header/Header';
 import Footer from '@components/Footer/Footer';
 import './App.css';
-import Header1 from '@components/Header/Header1';
 import { Route, Routes } from 'react-router-dom';
 import Write from '@components/Write';
 import Detail from '@components/Detail';
@@ -18,8 +17,7 @@ import Welcome from '@pages/Welcome';
 function App() {
   return (
     <>
-      {/* <Header /> */}
-      <Header1 />
+      <Header />
       <Routes>
         <Route path="/write" element={<Write />} />
         <Route path="/detail" element={<Detail />} />
