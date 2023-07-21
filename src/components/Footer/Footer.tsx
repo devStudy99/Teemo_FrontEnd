@@ -1,94 +1,89 @@
-import { ReactComponent as Figma } from '@image/figma.svg';
-import { ReactComponent as GitHub } from '@image/github.svg';
+import {
+  BottomSection,
+  ContentWrapper,
+  Copyright,
+  FooterWrapper,
+  InfoColumn,
+  InfoText,
+  LogoWrapper,
+  MiddleSection,
+  NavLink,
+  NavLinkDivider,
+  NavLinksWrapper,
+  Title,
+  TopSection,
+} from '@components/Footer/Footer.styles';
 import { ReactComponent as Logo } from '@image/logo.svg';
+import { useNavigate } from 'react-router-dom';
 
 const Footer = () => {
+  const navigate = useNavigate();
+
+  const reload = () => {
+    navigate('/');
+    window.location.reload();
+  };
+
   return (
-    <div
-      style={{
-        width: '100%',
-        display: 'flex',
-        background: '#F6F6F6',
-        justifyContent: 'center',
-      }}
-    >
-      <div style={{ width: '1280px' }}>
-        <div
-          style={{
-            display: 'flex',
-            fontSize: '12px',
-            borderBottom: '1px solid #CCC',
-            justifyContent: 'space-between',
-            padding: '50px 0px 30px 0px',
-          }}
-        >
-          <div style={{ display: 'flex', gap: '10px' }}>
-            <Logo />
-            <div style={{ display: 'flex', gap: '10px' }}>
-              <div
-                style={{
-                  paddingRight: '10px',
-                  borderRight: '1px solid #CCC',
-                  marginLeft: '50px',
-                }}
-              >
-                개인정보처리방침
-              </div>
-              <div style={{ paddingRight: '10px', borderRight: '1px solid #CCC' }}>이용약관</div>
-              <div>이용안내</div>
-            </div>
-          </div>
-          <div style={{ display: 'flex', gap: '20px' }}>
-            <a
-              href="https://www.figma.com/file/RuSC6C98EoSfXTkG2bGR2V/TravelBuddy?type=design&node-id=0-1"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Figma />
-            </a>
-            <a
-              href="https://github.com/devStudy99/TravelBuddy"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <GitHub />
-            </a>
-          </div>
-        </div>
-        <div
-          style={{
-            borderBottom: '1px solid #CCC',
-            display: 'flex',
-            gap: '150px',
-            padding: '50px 0px',
-          }}
-        >
-          <div>
-            <p style={{ fontSize: '16px' }}>CUSTOMER CENTER</p>
-            <p style={{ fontSize: '12px' }}>02-1234-5678</p>
-          </div>
-          <div>
-            <p>OPERATING HOURS</p>
-            <p>MON - FRI AM 09:30 - PM 05:30 LUNCH PM 12:00 - 1:00 SAT, SUN, HOLIDAY OFF</p>
-          </div>
-          <div>
-            <p>ACCOUNT INFO</p>
-            <p>신한은행 12345678900 예금주 (주) TEEMO(티모)</p>
-          </div>
-          <div>
-            <p>COMPANY INFO</p>
-            <p>
-              회사 : (주) TEEMO(티모) j팀장 : 정혜린 팀원 : 김승현, 임규진 사업자등록번호 :
-              [123-12-12345] 주소 : (01234) ???? 제휴문의 : ?? / contact@??.io
-            </p>
-          </div>
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <p>Copyright ⓒ 2023 - 2023 TEEMO Inc. All Rights Reserved</p>
-        </div>
-      </div>
-    </div>
+    <FooterWrapper>
+      <ContentWrapper>
+        <TopSection>
+          <LogoWrapper>
+            <Logo style={{ cursor: 'pointer' }} onClick={reload} />
+            <NavLinksWrapper>
+              <NavLink to="/개인정보처리방침">개인정보처리방침</NavLink>
+              <NavLinkDivider />
+              <NavLink to="/이용약관">이용약관</NavLink>
+              <NavLinkDivider />
+              <NavLink to="/이용안내">이용안내</NavLink>
+            </NavLinksWrapper>
+          </LogoWrapper>
+        </TopSection>
+        <MiddleSection>
+          <InfoColumn>
+            <Title>CUSTOMER CENTER</Title>
+            <InfoText>02-1234-5678</InfoText>
+          </InfoColumn>
+          <InfoColumn>
+            <Title>OPERATING HOURS</Title>
+            <InfoText>
+              MON - FRI AM 09:30 - PM 05:30
+              <br />
+              LUNCH PM 12:00 - 1:00
+              <br />
+              SAT, SUN, HOLIDAY OFF
+            </InfoText>
+          </InfoColumn>
+          <InfoColumn>
+            <Title>ACCOUNT INFO</Title>
+            <InfoText>
+              신한은행 12345678900
+              <br />
+              예금주 (주) TEEMO(티모)
+            </InfoText>
+          </InfoColumn>
+          <InfoColumn>
+            <Title>COMPANY INFO</Title>
+            <InfoText>
+              회사 : (주) TEEMO(티모)
+              <br />
+              팀장 : 정혜린
+              <br />
+              팀원 : 김승현, 임규진
+              <br />
+              사업자등록번호 : [123-12-12345]
+              <br />
+              주소 : (01234) ????
+              <br />
+              제휴문의 : ?? / contact@??.io
+            </InfoText>
+          </InfoColumn>
+        </MiddleSection>
+        <BottomSection>
+          <Copyright>Copyright ⓒ 2023 - 2023 TEEMO Inc. All Rights Reserved</Copyright>
+        </BottomSection>
+      </ContentWrapper>
+    </FooterWrapper>
   );
 };
-
 export default Footer;

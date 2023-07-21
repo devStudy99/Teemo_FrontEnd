@@ -1,58 +1,50 @@
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import {
+  ContentItem,
+  ContentItemWrapper,
+  ContentWrapper,
+  HeaderWrapper,
+  LoginButton,
+} from '@components/Header/Header.styles';
+import HeaderDropDown from '@components/DropDown/HeaderDropDown';
 import { ReactComponent as Logo } from '@image/logo.svg';
 
 const Header = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const navigate = useNavigate();
+
+  const reload = () => {
+    navigate('/');
+    window.location.reload();
+  };
+
   return (
-    <div
-      style={{
-        width: '100%',
-        display: 'flex',
-        height: '80px',
-        background: '#ECF2FF',
-        boxShadow: '0px 2px 6px 0px rgba(0, 0, 0, 0.04)',
-        justifyContent: 'center',
-      }}
-    >
-      <div
-        style={{
-          width: '1280px',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-        }}
-      >
-        <div>
-          <Logo />
-        </div>
-        <div style={{ display: 'flex', color: '#CCA6F4', fontSize: '18px' }}>
-          <div
-            style={{
-              borderRight: '1px solid #CCA6F4',
-              paddingRight: '20px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontWeight: 'bold',
-            }}
-          >
-            서비스소개
-          </div>
-          <div style={{ paddingLeft: '20px' }}>
-            <div
-              style={{
-                borderRadius: '12px',
-                background: '#E5D1FA',
-                padding: '10px',
-                color: '#ffffff',
-                fontWeight: 'bold',
-                cursor: 'pointer',
-              }}
-            >
-              로그인
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <HeaderWrapper>
+      <ContentWrapper>
+        <Logo style={{ cursor: 'pointer' }} onClick={reload} />
+        <ContentItemWrapper>
+          <ContentItem>
+            <Link to="/service">서비스소개</Link>
+          </ContentItem>
+          {isLoggedIn ? (
+            <>
+              <ContentItem>
+                <Link to="/가계부">가계부</Link>
+              </ContentItem>
+              <ContentItem>
+                <Link to="/community">커뮤니티</Link>
+              </ContentItem>
+              <HeaderDropDown />
+            </>
+          ) : (
+            <LoginButton>
+              <Link to="/login">로그인</Link>
+            </LoginButton>
+          )}
+        </ContentItemWrapper>
+      </ContentWrapper>
+    </HeaderWrapper>
   );
 };
 
