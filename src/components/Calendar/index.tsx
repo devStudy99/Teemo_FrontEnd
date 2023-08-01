@@ -6,6 +6,17 @@ import styled from 'styled-components';
 
 function index() {
   const [curDate, onChangeCurDate] = useState(new Date());
+  // const [markData, setMarkData] = useState<string[]>();
+
+  // const marks = [
+  //   '15-07-2023',
+  //   '03-07-2023',
+  //   '07-07-2023',
+  //   '12-07-2023',
+  //   '13-07-2023',
+  //   '15-07-2023',
+  // ];
+
   const handleDateChange = (date: any) => {
     onChangeCurDate(date);
   };
@@ -19,6 +30,15 @@ function index() {
           showNeighboringMonth={false}
           next2Label={null}
           prev2Label={null}
+          // tileContent={({ date }) => {
+          //   const income = data.incomes.find(x => {
+          //     if (x.day === new Date(date).getDate()) return x.value;
+          //     return null;
+          //   });
+          //   const record = data.records.find(x => {
+          //     if (x.day === new Date(date).getDate()) return x.value;
+          //     return null;
+          //   });
         />
       </Container>
     </>
@@ -29,7 +49,7 @@ export default index;
 
 export const Container = styled.div`
   .react-calendar {
-    width: 782px;
+    width: 682px;
     height: 100%;
     border-radius: 20px;
     border: 1px solid ${({ theme }) => theme.colors.gray200};
