@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Calendar from '@components/Calendar/index';
 import LeftSide3 from '@components/LeftSide3';
+import DailyWriteSheet from '@components/Calendar/DailyWriteSheet';
 function Main() {
   return (
     <Container>
@@ -13,7 +14,7 @@ function Main() {
         </Menu>
         <Calendar />
       </div>
-      <WriteModal>작성바</WriteModal>
+      <DailyWriteSheet />
     </Container>
   );
 }

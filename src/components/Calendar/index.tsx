@@ -49,7 +49,12 @@ function index() {
           tileContent={({ date }) =>
             isToday(date) ? (
               <TileContent>
-                <PencilIcon $show />
+                <PencilIcon
+                  $show
+                  onClick={(e: React.MouseEvent) => {
+                    e.stopPropagation();
+                  }}
+                />
               </TileContent>
             ) : (
               <TileContent>
@@ -172,13 +177,14 @@ const TileContent = styled.div`
 const PencilIcon = styled(Pencil)`
   position: absolute;
   padding: 1px;
-  top: 30%;
-  left: 50%;
+  top: 20%;
+  left: 80%;
   transform: translate(-50%, -50%);
   display: ${({ $show }) => ($show ? 'block' : 'none')};
   &:hover {
     background-color: var(--light--blue);
-    border-radius: 50%;
+    border-radius: 25%;
+    border: 1px solid var(--dark--purple);
   }
   &.hidden-pencil {
     display: none;
