@@ -41,8 +41,8 @@ function Welcome() {
               <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '100px' }}>
                 <ChapterTitle>chapter01</ChapterTitle>
                 <Title>기록하기</Title>
-                <p>더욱 효율적이고, 경제적인 돈 관리를 원하시나요?</p>
-                <p>나의 하루 소비생활을 기록해보세요!</p>
+                <Description>더욱 효율적이고, 경제적인 돈 관리를 원하시나요?</Description>
+                <Description>나의 하루 소비생활을 기록해보세요!</Description>
               </div>
               <div>
                 <img src={capture} alt="캡쳐이미지" width={'500px'} />
@@ -59,8 +59,8 @@ function Welcome() {
               >
                 <ChapterTitle>chapter02</ChapterTitle>
                 <Title>커뮤니티</Title>
-                <p>나의 소비생활을 점검하고</p>
-                <p>나의 고민을 다른 사람과 나눠보아요!</p>
+                <Description>나의 소비생활을 점검하고</Description>
+                <Description>나의 고민을 다른 사람과 나눠보아요!</Description>
               </div>
               {/* <div>
                 <img src={capture} alt="캡쳐이미지" />
@@ -70,8 +70,8 @@ function Welcome() {
               <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '100px' }}>
                 <ChapterTitle>chapter03</ChapterTitle>
                 <Title>티모피드</Title>
-                <p>나에게 딱 맞는 금융정보</p>
-                <p>티모피드에서 다양한 금융소식을 접해보세요!</p>
+                <Description>나에게 딱 맞는 금융정보</Description>
+                <Description>티모피드에서 다양한 금융소식을 접해보세요!</Description>
               </div>
               {/* <div>
                 <img src={capture} alt="캡쳐이미지" />
@@ -131,6 +131,12 @@ export const SubTitle = styled.p`
   font-size: 20px;
   font-weight: 600;
   color: ${({ theme }) => theme.colors.gray500};
+`;
+
+export const Description = styled.p`
+  font-size: 12px;
+  line-height: 15px;
+  word-break: keep-all;
 `;
 
 export const Section = styled.div`
