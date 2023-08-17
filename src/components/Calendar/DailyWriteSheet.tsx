@@ -30,7 +30,7 @@ function DailyWriteSheet() {
       </FormHeader>
       <FormMid>
         <div style={{ display: 'flex', alignItems: 'center', padding: '10px' }}>
-          <p>분류</p>
+          <p style={{ marginRight: '10px' }}>분류</p>
           <StyledRadio>
             <input type="radio" checked id="expense" />
             <label htmlFor="expense">지출</label>
@@ -40,26 +40,29 @@ function DailyWriteSheet() {
             <label htmlFor="income">수입</label>
           </StyledRadio>
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', padding: '10px' }}>
+        <StyledSelector style={{ display: 'flex', alignItems: 'center', padding: '10px' }}>
           <p>카테고리</p>
           <select name="category" id="category">
+            <option>선택</option>
             <option value="food">식비</option>
             <option value="cafe">카페/간식</option>
             <option value="living">생활</option>
             <option value="shopping">쇼핑</option>
             <option value="etc">기타</option>
           </select>
-        </div>
-        <div style={{ display: 'flex', alignItems: 'center', padding: '10px' }}>
+        </StyledSelector>
+        <StyledInput style={{ display: 'flex', alignItems: 'center', padding: '10px' }}>
           <label htmlFor="merchant">소비처</label>
           <input type="text" id="merchant" />
-        </div>
-        <div style={{ display: 'flex', alignItems: 'center', padding: '10px' }}>
+        </StyledInput>
+        <StyledInput style={{ display: 'flex', alignItems: 'center', padding: '10px' }}>
           <label htmlFor="memo">메모</label>
           <input type="text" id="memo" />
-        </div>
+        </StyledInput>
       </FormMid>
-      <FinishBtn>작성완료</FinishBtn>
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <FinishBtn>작성완료</FinishBtn>
+      </div>
     </Container>
   );
 }
@@ -141,7 +144,6 @@ const FinishBtn = styled.button`
   width: 167px;
   height: 30px;
   font-weight: 600;
-  margin-left: 39px;
   background-color: var(--light--blue);
   color: var(--dark--purple);
   border-radius: 5px;
@@ -165,5 +167,28 @@ const StyledRadio = styled.div`
     width: 0;
     height: 0;
     overflow: hidden;
+  }
+`;
+
+const StyledInput = styled.div`
+  label {
+    width: 20%;
+  }
+
+  input {
+    width: 70%;
+    border: none;
+    border-bottom: 1px solid black;
+  }
+`;
+const StyledSelector = styled.div`
+  label {
+    width: 20%;
+  }
+
+  select {
+    width: 50%;
+    margin-left: 10px;
+    border: none;
   }
 `;
