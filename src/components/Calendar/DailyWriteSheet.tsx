@@ -181,6 +181,7 @@ const StyledInput = styled.div`
     border-bottom: 1px solid black;
   }
 `;
+
 const StyledSelector = styled.div`
   label {
     width: 20%;

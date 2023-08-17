@@ -14,6 +14,7 @@ import Login from '@pages/Login';
 // import MyPage from '@components/MyPage';
 import Welcome from '@pages/Welcome';
 import Main from '@pages/cashBook/Main';
+import WriteCashBook from '@pages/cashBook/WriteCashBook';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<Welcome />} />
         <Route path="/main" element={<Main />} />
+        <Route path="/accounts/add" element={<WriteCashBook />} />
         {/* <Route path="/mypage" element={<MyPage />} /> */}
       </Routes>
       <Footer />
