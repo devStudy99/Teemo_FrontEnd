@@ -1,8 +1,8 @@
 const menuList = [
-  {
-    title: '',
-    size: 4,
-  },
+  // {
+  //   title: '',
+  //   size: 4,
+  // },
   {
     title: '분류',
     size: 5,
