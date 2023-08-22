@@ -4,8 +4,20 @@ import styled from 'styled-components';
 import menuList from '@components/Modal/menu';
 import WriteRow from '@components/WriteCashBook/WriteRow';
 import { ReactComponent as Add } from '@image/add.svg';
+
 function WriteCashBook() {
-  const [rowItems, setRowItems] = useState<string[]>([]);
+  const [rowItems, setRowItems] = useState([{ rowKey: Date.now() }]);
+
+  const handleAddRow = () => {
+    const newRowKey = Date.now();
+    const newRow = { rowKey: newRowKey };
+    setRowItems([...rowItems, newRow]);
+  };
+
+  const handleRemoveRow = (rowKeyToRemove: number) => {
+    const updatedRows = rowItems.filter((row) => row.rowKey !== rowKeyToRemove);
+    setRowItems(updatedRows);
+  };
 
   return (
     <div
@@ -34,14 +46,21 @@ function WriteCashBook() {
           </Menus>
 
           <AccountRows>
-            {rowItems.map((row, index) => (
-              <WriteRow key={index} />
+            {rowItems.map((item) => (
+              <div key={item.rowKey}>
+                <WriteRow rowKey={item.rowKey} onRemove={handleRemoveRow} />
+              </div>
             ))}
           </AccountRows>
 
-          <div style={{ display: 'flex', alignItems: 'center', marginTop: '10px' }}>
-            <Add />
-            <p>행 추가</p>
+          <div
+            style={{ display: 'flex', alignItems: 'center', marginTop: '10px' }}
+            onClick={handleAddRow}
+          >
+            <AddBtn />
+            <p style={{ fontSize: '14px', fontWeight: '600', opacity: '70%', cursor: 'pointer' }}>
+              행 추가
+            </p>
           </div>
 
           <FinishBtn>
@@ -91,7 +110,7 @@ const Menus = styled.div`
 `;
 
 const AccountRows = styled.div`
-  min-height: 300px;
+  min-height: 400px;
   border: 1px solid black;
   overflow: auto;
 `;
@@ -107,4 +126,9 @@ const FinishBtn = styled.div`
     padding: 1rem;
     border-radius: 5px;
   }
+`;
+
+const AddBtn = styled(Add)`
+  cursor: pointer;
+  margin-right: 5px;
 `;

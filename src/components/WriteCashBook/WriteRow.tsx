@@ -2,9 +2,18 @@ import React from 'react';
 import styled from 'styled-components';
 import { ReactComponent as Cancel } from '@image/close.svg';
 
-function WriteRow() {
+interface WriteRowProps {
+  rowKey: number;
+  onRemove: (rowKeyToRemove: number) => void;
+}
+
+function WriteRow({ rowKey, onRemove }: WriteRowProps) {
+  const handleRemoveClick = () => {
+    onRemove(rowKey);
+  };
+
   return (
-    <div style={{ display: 'flex', alignItems: 'center' }}>
+    <div style={{ display: 'flex', alignItems: 'center', padding: '3px' }}>
       <div>
         <select name="" id="isIncome">
           <option value="">선택</option>
@@ -38,7 +47,9 @@ function WriteRow() {
         <input type="text" id="memo" />
       </StyledInput>
 
-      <div>{/* <CancelBtn/> */}</div>
+      <div>
+        <RemoveBtn onClick={handleRemoveClick} />
+      </div>
     </div>
   );
 }
@@ -69,6 +80,6 @@ const PriceInput = styled.input`
   border-bottom: 1px solid black;
 `;
 
-const CancelBtn = styled(Cancel)`
+const RemoveBtn = styled(Cancel)`
   cursor: pointer;
 `;
