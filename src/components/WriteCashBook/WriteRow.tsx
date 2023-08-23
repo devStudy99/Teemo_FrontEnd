@@ -13,19 +13,26 @@ function WriteRow({ rowKey, onRemove }: WriteRowProps) {
   };
 
   return (
-    <div style={{ display: 'flex', alignItems: 'center', padding: '3px' }}>
-      <div>
+    <div
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        padding: '8px',
+        justifyContent: 'center',
+      }}
+    >
+      <StyledSelector>
         <select name="" id="isIncome">
           <option value="">선택</option>
           <option value="expense">지출</option>
           <option value="income">수입</option>
         </select>
-      </div>
+      </StyledSelector>
       <div>
-        <input type="date" />
+        <StyledInputDate type="date" />
       </div>
 
-      <StyledSelector style={{ display: 'flex', alignItems: 'center', padding: '10px' }}>
+      <StyledSelector>
         <select name="category" id="category">
           <option>선택</option>
           <option value="food">식비</option>
@@ -36,14 +43,16 @@ function WriteRow({ rowKey, onRemove }: WriteRowProps) {
         </select>
       </StyledSelector>
 
-      <StyledInput style={{ display: 'flex', alignItems: 'center', padding: '10px' }}>
+      <div>
+        <PriceInput
+          type="number"
+          onKeyDown={(e: any) => ['e', 'E', '+', '-'].includes(e.key) && e.preventDefault()}
+        />
+      </div>
+      <StyledInput>
         <input type="text" id="merchant" />
       </StyledInput>
-      <PriceInput
-        type="number"
-        onKeyDown={(e: any) => ['e', 'E', '+', '-'].includes(e.key) && e.preventDefault()}
-      />
-      <StyledInput style={{ display: 'flex', alignItems: 'center', padding: '10px' }}>
+      <StyledInput>
         <input type="text" id="memo" />
       </StyledInput>
 
@@ -57,29 +66,38 @@ function WriteRow({ rowKey, onRemove }: WriteRowProps) {
 export default WriteRow;
 const StyledSelector = styled.div`
   select {
-    /* width: 50%; */
-    margin-left: 10px;
     border: none;
+    border-bottom: 1px solid var(--dark--purple);
+    padding: 3px;
   }
 `;
 
 const StyledInput = styled.div`
   input {
     border: none;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--dark--purple);
+    padding: 3px;
   }
 `;
 
 const PriceInput = styled.input`
   cursor: pointer;
-  /* width: 40%; */
+
   /* color: transparent; */
   background-color: transparent;
   border: none;
   outline: none;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--dark--purple);
+  padding: 3px;
 `;
 
 const RemoveBtn = styled(Cancel)`
   cursor: pointer;
+`;
+
+const StyledInputDate = styled.input`
+  border: none;
+  outline: none;
+  border-bottom: 1px solid var(--dark--purple);
+  padding: 3px;
 `;

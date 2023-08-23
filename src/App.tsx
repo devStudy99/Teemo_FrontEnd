@@ -15,6 +15,7 @@ import Login from '@pages/Login';
 import Welcome from '@pages/Welcome';
 import Main from '@pages/cashBook/Main';
 import WriteCashBook from '@pages/cashBook/WriteCashBook';
+import Budget from '@pages/cashBook/Budget';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
         <Route path="/" element={<Welcome />} />
         <Route path="/main" element={<Main />} />
         <Route path="/accounts/add" element={<WriteCashBook />} />
+        <Route path="/budget" element={<Budget />} />
         {/* <Route path="/mypage" element={<MyPage />} /> */}
       </Routes>
       <Footer />

@@ -26,10 +26,9 @@ function WriteCashBook() {
         marginTop: '150px',
         marginBottom: '230px',
         justifyContent: 'center',
-        border: '1px solid red',
       }}
     >
-      <div style={{ width: '1280px', display: 'flex', gap: '200px', border: '1px solid black' }}>
+      <div style={{ width: '1280px', display: 'flex', gap: '200px' }}>
         <LeftSide3 />
 
         <div>
@@ -77,7 +76,6 @@ const Container = styled.div`
   height: 100vh;
   /* margin: 150px 0px 230px 220px; */
   display: flex;
-  border: 1px solid black;
   /* margin-bottom: 230px; */
   /* justify-content: center; */
 `;
@@ -104,14 +102,11 @@ const Menus = styled.div`
   display: flex;
   justify-content: space-between;
   /* justify-content: center; */
-  /* gap: 2rem;
-  padding: 2rem; */
-  /* text-align: center; */
+  text-align: center;
 `;
 
 const AccountRows = styled.div`
   min-height: 400px;
-  border: 1px solid black;
   overflow: auto;
 `;
 

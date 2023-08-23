@@ -1,27 +1,27 @@
 const menuList = [
-  // {
-  //   title: '',
-  //   size: 4,
-  // },
   {
     title: '분류',
-    size: 5,
+    size: 6,
   },
   {
     title: '날짜',
-    size: 12,
+    size: 9.5,
   },
   {
     title: '카테고리',
-    size: 9,
+    size: 6,
   },
   {
     title: '금액',
-    size: 9,
+    size: 11.5,
+  },
+  {
+    title: '거래처',
+    size: 11.5,
   },
   {
     title: '메모',
-    size: 10,
+    size: 11.5,
   },
 ];
 
