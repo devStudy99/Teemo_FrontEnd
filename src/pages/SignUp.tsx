@@ -16,7 +16,9 @@ function SignUp() {
             <DataInput label="비밀번호 확인" type="password" id="password" />
           </div>
           <ButtonContainer>
-            <Button378 color="--light--purple">가입하기</Button378>
+            <Button378 color="--light--purple" bgcolor="#fff">
+              가입하기
+            </Button378>
           </ButtonContainer>
         </SignUpForm>
       </Container>

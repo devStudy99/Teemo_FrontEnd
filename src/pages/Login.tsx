@@ -23,7 +23,9 @@ function Login() {
             <DataInput label="비밀번호" type="password" id="password" />
           </div>
           <ButtonContainer>
-            <Button378 color="--dark--purple">로그인</Button378>
+            <Button378 bgcolor="--dark--purple" color="white">
+              로그인
+            </Button378>
           </ButtonContainer>
           <QuestionBox>
             <AskIsUser>
@@ -32,7 +34,7 @@ function Login() {
               <Pseudo></Pseudo>
             </AskIsUser>
           </QuestionBox>
-          <Button378 color="--dark--blue" onClick={handleSignupClick}>
+          <Button378 bgcolor="--dark--blue" color="white" onClick={handleSignupClick}>
             회원가입
           </Button378>
         </SignUpForm>

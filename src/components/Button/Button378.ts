@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 interface ButtonProps {
+  bgcolor: string;
   color: string;
 }
 
@@ -11,11 +12,11 @@ export const Button378 = styled.button<ButtonProps>`
   border-radius: 5.481px;
   border: none;
   opacity: 0.6;
-  color: #fff;
+  color: var(${({ color }) => color});
   font-size: 16.442px;
   font-weight: 500;
   cursor: pointer;
-  background-color: var(${({ color }) => color});
+  background-color: var(${({ bgcolor }) => bgcolor});
 
   &:hover {
     opacity: 0.9;
