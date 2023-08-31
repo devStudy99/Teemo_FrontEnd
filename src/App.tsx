@@ -16,6 +16,7 @@ import Welcome from '@pages/Welcome';
 import Main from '@pages/cashBook/Main';
 import WriteCashBook from '@pages/cashBook/WriteCashBook';
 import Budget from '@pages/cashBook/Budget';
+import TimoFeed from '@pages/TimoFeed';
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
         <Route path="/main" element={<Main />} />
         <Route path="/accounts/add" element={<WriteCashBook />} />
         <Route path="/budget" element={<Budget />} />
+        <Route path="/feed" element={<TimoFeed />} />
         {/* <Route path="/mypage" element={<MyPage />} /> */}
       </Routes>
       <Footer />
